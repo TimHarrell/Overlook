@@ -1,0 +1,23 @@
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 40%;
+	
+    
+}
+
+table {
+	margin: 0px auto;
+}
+
+tbody {
+	margin: 0px auto;
+}
+
+th, td {
+    padding: 5px;
+    color: yellow;
+}
+th {
+    text-align: left;
+}

@@ -1,0 +1,94 @@
+
+Header {
+	color: yellow;
+	text-align: center;
+}
+body {
+	background: #8e0000;
+	margin: 0;
+    padding: 0;
+	margin-top:0;
+	background-image: url(imgs/the-shining_1280x720.jpg);
+}
+
+footer {
+	padding: 20px;
+    margin-top: 20px;
+    color: #f4f4f4;
+    background-color: #e84900;
+    text-align: center;
+}
+
+
+#pagetitle {
+	color: yellow;
+	text-align: center;
+}
+
+#indexbackground {
+	 display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.body {
+
+	background-color: #8e0000;
+	color: yellow;
+}
+.body a {
+	font-size: 17px;
+}
+/* nav bar */
+.navbar {
+	background-color: black;
+	overflow: hidden;
+	font-size: 17px;
+}
+
+.navbarbutton {
+	float: left;
+	padding: 14px 16px;
+	background-color: black;
+	color: yellow;
+	border: none;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.navbarbutton:hover {
+	float: left;
+    background-color: red;
+    color: yellow;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+.subnavbarbutton {
+	float: right;
+	padding: 14px 16px;
+	background-color: black;
+	color: yellow;
+	border: none;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.subnavbarbutton:hover {
+	float: right;
+    background-color: red;
+    color: yellow;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.mainpage {
+	color: yellow;
+	text-align: center;
+	
+}

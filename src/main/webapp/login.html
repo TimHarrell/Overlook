@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Overlook Hotel</title>
+            <meta name="author" content="tim">
+            <meta name="keywords" content="hotel">
+            <meta name="viewport" content="width=device-width">
+            <link type="text/css" rel="stylesheet" href="css/style.css">
+			
+    </head>
+    <body>
+    	
+        <Header>
+        <div class="navbar">
+			<button type="button" onclick="getHome()" id="home" class="navbarbutton">Home</button>
+			<button type="button" onclick="goToAccount()" class="navbarbutton">Account</button>
+		</div>
+			
+        </Header>
+        
+        <div>
+        	<h1 id="pagetitle">Login Page</h1>
+        	<div align="center">
+		        <form action="ProfileServlet" method="post">
+		        	username:
+		        	<br>
+		        	<input  type="text" name="username" maxlength="20">
+		        	<br>
+		        	password:
+		        	<br>
+		        	<input type="password" name="password" maxlength="20">
+		        	<br>
+		        	<input type="submit" value="login" onclick="getLoginInfo">
+		        </form>
+       		 </div>
+       		 <p id="loginbody">sign in</p>
+        </div>
+    </body>
+	<script src="js/login.js"></script>
+</html>
