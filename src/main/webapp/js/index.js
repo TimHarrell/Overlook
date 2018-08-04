@@ -1,4 +1,5 @@
 
+
 function getHome() {
 	
 	changeInner("text/titles/home.txt", "pagetitle");
@@ -9,15 +10,33 @@ function getHome() {
 function getInfo() {
 	
 	changeInner("text/titles/roominfo.txt", "pagetitle");
-	changeInner("hello.txt", "loginbody");
-	
+	changesrc("text/src/img.txt", "indexbackground");
+	let xhr = new XMLHttpRequest();  
+	if(xhr.readyStaye == 4 && xhr.Status == 200) {
+			var title = document.getElementById("pageTitle");
+			title.innerHtml = '';
+			title.innerHtml = xhr.responseText;
+		}
+	xhr.open("GET", 'IndexHandler');
+	xhr.send();
 }
+
+function process() {
+		
+		if(xhr.readyStaye == 4 && xhr.Status == 200) {
+			var title = document.getElementById("pageTitle");
+			title.innerHtml = '';
+			title.innerHtml = 'Room Info';
+			
+		}
+	}
 
 function getAbout() {
 	
 	changeInner("text/titles/about.txt", "pagetitle");
 	changeInner("text/hello.txt", "loginbody");
 	changesrc("text/src/img.txt", "image");
+	
 }
 
 function goToAccount() {

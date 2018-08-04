@@ -11,14 +11,14 @@ public class HtmlBuilder {
 				"<!DOCTYPE html>\r\n" + 
 				"<html>\r\n" + 
 				"	<head>\r\n" + 
-				"		<meta charset='ISO-8859-1'>\r\n" + 
+				"		<meta charset='UTF-8'>\r\n" + 
 				"		 <title>Overlook Hotel</title>\r\n" + 
 				"            <meta name='author\" content='tim'>\r\n" + 
 				"            <meta name='keywords' content='hotel'>\r\n" + 
 				"            <meta name='viewport' content='width=device-width'>\r\n" + 
 				"            <link type='text/css' rel='stylesheet' href='css/style.css'>\r\n" + 
-				"			 <link type='text/css' rel='stylesheet' href='css/HostTables.css>'" +
-				"			 <link type='text/css' rel='stylesheet' href='css/messageformat.css>'" +
+				"			 <link type='text/css' rel='stylesheet' href='css/HostTables.css'>" +
+				"			 <link type='text/css' rel='stylesheet' href='css/messageformat.css'>" +
 				"	</head>\r\n" + 
 				"	<body>\r\n" + 
 				"		<header>\r\n" + 
@@ -57,14 +57,14 @@ public class HtmlBuilder {
 				"	<head>\r\n" + 
 				"		\r\n" + 
 				"		\r\n" + 
-				"		<meta charset='ISO-8859-1'>\r\n" + 
+				"		<meta charset='UTF-8'>\r\n" + 
 				"		 <title>Overlook Hotel</title>\r\n" + 
 				"            <meta name='author' content='tim'>\r\n" + 
 				"            <meta name='keywords' content='hotel'>\r\n" + 
 				"            <meta name='viewport' content='width=device-width'>\r\n" + 
 				"            <link type='text/css' rel='stylesheet' href='css/style.css'>\r\n" + 
-				"			 <link type='text/css' rel='stylesheet' href='css/HostTables.css>'" +
-				"			 <link type='text/css' rel='stylesheet' href='css/messageformat.css>'" +
+				"			 <link type='text/css' rel='stylesheet' href='css/HostTables.css'>" +
+				"			 <link type='text/css' rel='stylesheet' href='css/messageformat.css'>" +
 				"			 <link type='text/css' rel='stylesheet' href='css/GuestProfile.css'>" +
 				"	</head>\r\n" + 
 				"	<body>" +

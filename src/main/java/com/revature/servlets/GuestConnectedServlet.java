@@ -229,7 +229,8 @@ public class GuestConnectedServlet extends HttpServlet {
 		
 		mainPage.append(
 				"<form action='GuestProfileServlet' method='post'>\n" + 
-				"		<p>First name: " + currUser.getFirstName() + " Last name: " + currUser.getLastName() + "</p>" +
+				"		<p>First name: " + currUser.getFirstName()+ "</p>" +
+				"		<p>Last name: " + currUser.getLastName() + "</p>" +
 				"			\n" + 
 				"				<input type='text' maxlength='41' name='fullname'>\n" + 
 				"				<button type='submit' name='input' value='fullname'>change full name</button>\n" + 

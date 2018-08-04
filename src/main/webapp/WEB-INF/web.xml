@@ -231,4 +231,14 @@
     <servlet-name>GuestProfileServlet</servlet-name>
     <url-pattern>/GuestProfileServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>IndexHandler</display-name>
+    <servlet-name>IndexHandler</servlet-name>
+    <servlet-class>com.revature.servlets.IndexHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IndexHandler</servlet-name>
+    <url-pattern>/IndexHandler</url-pattern>
+  </servlet-mapping>
 </web-app>
