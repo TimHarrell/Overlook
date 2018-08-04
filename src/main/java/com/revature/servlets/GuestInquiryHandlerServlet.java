@@ -46,24 +46,28 @@ public class GuestInquiryHandlerServlet extends HttpServlet {
 		ArrayList<Message> messages = InquiryDao.getConversationById(inqId);
 		ArrayList<Message> sorted = new ArrayList<>();
 		
+		// sort our messages
 		for(int j = 1; j <= messages.size(); j++) {
 			for(Message m : messages) { 
 				if(m.getMessageNumber() == j) sorted.add(m);
 			}
 		}
-		
+		// display the messages
+		addition.append("<div align='center' class='messages'>");
 		for(Message m : sorted) {
 			addition.append(
-							"<p style='max-width:300px;color:yellow;word-wrap:break-word;padding-left:30px'>" + m.getSender() + ": " +
+							"<p class='message'>" + m.getSender() + ": " +
 							m.getMessage() + "</p>"
 					);
 		}
 		
+		addition.append("</div>");
+		addition.append("<div align='center'>");
 		addition.append("<form action='GuestResponseServlet' method='post'>\r\n" + 
 				"				<input type='text' name='response' maxlength='1000'><br>\r\n" + 
 				"       			<br>\r\n" + 
 				"       			<button type='submit'>submit response</button>\r\n" + 
-				"       		</form>"
+				"       		</form></div>"
 				);
 		return HtmlBuilder.makeGuestProfileHtml(buttons.toString(), "Response", addition.toString() );
 	}

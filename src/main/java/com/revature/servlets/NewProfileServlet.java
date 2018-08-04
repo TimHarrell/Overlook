@@ -21,9 +21,16 @@ public class NewProfileServlet extends HttpServlet {
 		String firstname = req.getParameter("firstname");
 		String lastname = req.getParameter("lastname");
 		String password = req.getParameter("password");
-		Profile profile = ProfileDao.makeProfile(username, firstname, lastname, password);
-		if(profile != null) {
+		String password2 = req.getParameter("passwordcheck");
+		
+		if(password.equals(password2) ) {
+			Profile profile = ProfileDao.makeProfile(username, firstname, lastname, password);
+			if(profile == null) { // if profile is null, then that userId already exists
+				resp.sendRedirect("createprofile.html");
+			}
+			else {
 			resp.sendRedirect("login.html");
+			}
 		} else {
 			resp.sendRedirect("createprofile.html");
 		}

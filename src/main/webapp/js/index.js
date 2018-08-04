@@ -4,7 +4,7 @@ function getHome() {
 	
 	changeInner("text/titles/home.txt", "pagetitle");
 	changeInner("text/hello.txt", "loginbody");
-	changesrc("text/src/image.txt", "image");
+	changesrc("text/src/home.txt", "indexbackground");
 }
 
 function getInfo() {

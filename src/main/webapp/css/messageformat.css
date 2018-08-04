@@ -7,13 +7,15 @@
 	color:yellow;
 }
 
-.messageuser {
-	color:yellow;
+div.messages {
+	color: yellow;
+	margin: auto;
 }
-.messagebody {
+
+p.message {
 	max-width:300px;
 	word-wrap:break-word;
 	color: yellow;
-	padding-left:30px;
+	text-align: left;
 	
 }

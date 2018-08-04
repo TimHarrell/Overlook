@@ -51,20 +51,23 @@ private String makeHostResponseHtml(int inqId) {
 		ArrayList<Message> messages = InquiryDao.getConversationById(inqId);
 		ArrayList<Message> sorted = new ArrayList<>();
 		
+		// sort the messages
 		for(int j = 1; j <= messages.size(); j++) {
 			for(Message m : messages) { 
 				if(m.getMessageNumber() == j) sorted.add(m);
 			}
 		}
 		
-		
+		// display the messages
+		addition.append("<div align='center' class='messages'>");
 		for(Message m : sorted) {
 			addition.append(
-							"<p style='max-width:300px;color:yellow;word-wrap:break-word;padding-left:30px'>" + m.getSender() + ": " +
+							"<p class='message'>" + m.getSender() + ": " +
 							m.getMessage() + "</p>"
 					);
 		}
-		
+		addition.append("</div>");
+		addition.append("<div align='center'>");
 		addition.append("<form action='HostResponseServlet' method='post'>\r\n" + 
 				"				<input type='text' name='response' maxlength='1000'><br>\r\n" + 
 				"       			<br>\r\n" + 
@@ -72,7 +75,8 @@ private String makeHostResponseHtml(int inqId) {
 				"               		id='image' name='image' \r\n" + 
 				"               		accept='image/png, image/jpeg' />\r\n" + 
 				"       			<button type='submit'>submit response</button>\r\n" + 
-				"       		</form>"
+				"       		</form>" +
+				"</div>"
 				);
 		return HtmlBuilder.makeHostProfileHtml(addition.toString(), "Respond to Inquiry ID" + inqId);
 	}

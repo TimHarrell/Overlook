@@ -23,7 +23,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>NewProfileServlet</servlet-name>
-    <url-pattern>/NewprofileServlet</url-pattern>
+    <url-pattern>/NewProfileServlet</url-pattern>
   </servlet-mapping>
   <filter>
     <filter-name>LoginFilter</filter-name>
