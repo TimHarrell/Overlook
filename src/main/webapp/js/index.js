@@ -17,7 +17,7 @@ function getInfo() {
 			title.innerHtml = '';
 			title.innerHtml = xhr.responseText;
 		}
-	xhr.open("GET", 'IndexHandler');
+	xhr.open("GET", '/Overlook/IndexHandler');
 	xhr.send();
 }
 

@@ -22,6 +22,16 @@ import com.revature.dao.ReservationsDao;
 public class GuestConnectedServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+		try {
+			doGet(req, resp);
+		} catch (ServletException e) {
+			
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -81,7 +91,9 @@ public class GuestConnectedServlet extends HttpServlet {
 	}
 
 	
-
+	/*
+	 * 
+	 */
 	private String makeInquiryGuestHtml() {
 		// buttons
 		StringBuilder buttons = new StringBuilder();
@@ -94,6 +106,9 @@ public class GuestConnectedServlet extends HttpServlet {
 		return HtmlBuilder.makeGuestProfileHtml(buttons.toString(), "Inquires", mainPage.toString());
 	}
 	
+	/*
+	 * 
+	 */
 	private String makeInquiryGuestMakeHtml() {
 		// buttons
 		StringBuilder buttons = new StringBuilder();
@@ -122,6 +137,9 @@ public class GuestConnectedServlet extends HttpServlet {
 		return HtmlBuilder.makeGuestProfileHtml(buttons.toString(), "Inqueries: make", mainPage.toString());
 	}
 	
+	/*
+	 * 
+	 */
 	private String makeInquiryGuestViewHtml(Profile profile) {
 		// buttons
 		StringBuilder buttons = new StringBuilder();
@@ -156,10 +174,16 @@ public class GuestConnectedServlet extends HttpServlet {
 		return HtmlBuilder.makeGuestProfileHtml(buttons.toString(), "Inqueries: view", mainPage.toString());
 	}
 	
+	/*
+	 * 
+	 */
 	private String makeGuestDashBoardHtml() {
 		return HtmlBuilder.makeGuestProfileHtml("", "DashBoard", "");
 	}
 	
+	/*
+	 * 
+	 */
 	private String makeReservationGuestHtml() {
 		StringBuilder buttons = new StringBuilder();
 		buttons.append(
@@ -172,6 +196,9 @@ public class GuestConnectedServlet extends HttpServlet {
 		return HtmlBuilder.makeGuestProfileHtml(buttons.toString(), "Reservations", body.toString());
 	}
 	
+	/*
+	 * 
+	 */
 	private String makeGuestReservationSubmit() {
 		StringBuilder buttons = new StringBuilder();
 		buttons.append(
@@ -191,6 +218,9 @@ public class GuestConnectedServlet extends HttpServlet {
 		return HtmlBuilder.makeGuestProfileHtml(buttons.toString(), "Reservations", body.toString());
 	}
 	
+	/*
+	 * 
+	 */
 	private String makePendingGuestHtml(Profile profile) {
 		StringBuilder buttons = new StringBuilder();
 		buttons.append(
@@ -224,6 +254,9 @@ public class GuestConnectedServlet extends HttpServlet {
 		return HtmlBuilder.makeGuestProfileHtml(buttons.toString(), "Pending Reservations", mainPage.toString());
 	}
 	
+	/*
+	 * 
+	 */
 	private String makeProfileGuestHtml(Profile currUser) {
 		StringBuilder mainPage = new StringBuilder();
 		

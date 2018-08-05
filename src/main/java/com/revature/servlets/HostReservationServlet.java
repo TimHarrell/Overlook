@@ -59,6 +59,8 @@ public class HostReservationServlet extends HttpServlet {
 					"						<th>date</th>\r\n" + 
 					"						<th>room number</th>\r\n" +
 					"						<th>user id</th>" +	
+					"						<th>Approve</th>" +	
+					"						<th>Deny</th>" +	
 					"					</tr>\r\n"  
 					); 
 			
