@@ -52,11 +52,12 @@ private String makeHostResponseHtml(int inqId) {
 		ArrayList<Message> sorted = new ArrayList<>();
 		
 		// sort the messages
-		for(int j = 1; j <= messages.size(); j++) {
-			for(Message m : messages) { 
-				if(m.getMessageNumber() == j) sorted.add(m);
+			for(int j = 1; j <= messages.size(); j++) {
+				for(Message m : messages) { 
+					if(m.getMessageNumber() == j) sorted.add(m);
+				}
 			}
-		}
+		
 		
 		// display the messages
 		addition.append("<div align='center' class='messages'>");

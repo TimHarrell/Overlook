@@ -85,7 +85,9 @@ public class GuestConnectedServlet extends HttpServlet {
 				resp.getWriter().write(makeGuestReservationSubmit());
 			}
 			else {
-				System.out.println("sopmething went wrong with seleection in ProfileConnection Servlet");
+				resp.setContentType("text/HTML");
+				resp.getWriter().write(makeGuestDashBoardHtml());
+				System.out.println("no input");
 			}
 		}
 	}
