@@ -13,6 +13,8 @@ import javax.servlet.http.HttpSession;
 import com.revature.beans.Inquiry;
 import com.revature.beans.PendingReservation;
 import com.revature.beans.Profile;
+import com.revature.beans.Reservation;
+import com.revature.beans.Room;
 import com.revature.dao.InquiryDao;
 import com.revature.dao.ReservationsDao;
 
@@ -56,7 +58,7 @@ public class GuestConnectedServlet extends HttpServlet {
 			}
 			else if(input.equals("reservations")) {
 				resp.setContentType("text/HTML");
-				resp.getWriter().write(makeReservationGuestHtml());
+				resp.getWriter().write(makeReservationGuestHtml(currUser));
 				
 			}
 			else if(input.equals("inquiry")) { // Inquiry selected
@@ -186,14 +188,36 @@ public class GuestConnectedServlet extends HttpServlet {
 	/*
 	 * 
 	 */
-	private String makeReservationGuestHtml() {
+	private String makeReservationGuestHtml(Profile profile) {
 		StringBuilder buttons = new StringBuilder();
 		buttons.append(
 				"		<button type='submit' class='subnavbarbutton' name='input' value='pending'>Pending</button>\r\n" + 
 				"		<button type='submit' class='subnavbarbutton' name='input' value='submit'>Submit</button>\r\n"  
 				);
 		StringBuilder body = new StringBuilder();
+		body.append("<table>"
+				);
 		
+		ArrayList<Reservation> list = ReservationsDao.getResrvationsByUserId(profile.getUserId());
+		body.append("<tr>" +
+				"<th>Date</th>\r\n" + 
+				"<th>Room Number</th>\r\n" + 
+				"<th>Number of Beds</th>" +
+				"<th>smoking</th>" +
+				"</tr>");
+		for(Reservation res : list) {
+			Room room = new Room(res.getRoomNum());
+			body.append("<tr>" +
+					"<td>" + res.getDate() + "</td>" +
+					"<td>" + res.getRoomNum() + "</td>" +
+					"<td>" + room.getNumBeds() + "</td>" +
+					"<td>" + room.getSmoking() + "</td>" +
+					"</tr>");
+		}
+		
+		body.append(
+				"</form>" +
+				"</table>");
 		
 		return HtmlBuilder.makeGuestProfileHtml(buttons.toString(), "Reservations", body.toString());
 	}

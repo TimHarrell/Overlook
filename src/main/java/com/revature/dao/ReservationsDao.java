@@ -247,6 +247,40 @@ public class ReservationsDao {
 			return true;
 	}
 	
+	public static ArrayList<Reservation> getResrvationsByUserId(String userId) {
+		System.out.println("connecting...");
+		PreparedStatement ps = null;
+		ArrayList<Reservation> reservations = new ArrayList<>();
+		
+		try(Connection conn = ConnectionUtil.getConnection()) {
+		    
+			String sql = "SELECT * FROM RESERVATIONS WHERE userId=?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, userId);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) { // if the result set could not find a row, the account does not exist
+				Date date = rs.getDate("reservationDate");
+				String uid = rs.getString("userId");
+				Integer rn = rs.getInt("roomNumber");
+				
+				reservations.add(new Reservation(date, uid, rn));
+			}
+				
+			rs.close();
+			ps.close();
+		}
+		catch(SQLException sql) {
+			sql.printStackTrace();
+			return null;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+			
+			return reservations;
+	}
 	public static Boolean denyReservationByTN(int tn) {
 		System.out.println("connecting...");
 		PreparedStatement ps = null;
